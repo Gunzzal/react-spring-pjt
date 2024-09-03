@@ -6,6 +6,8 @@
 
         <typeAlias alias="bbsResponseDTO" type="com.spring.react_spring_pjt.bbs.domain.BbsResponseDTO"/>
         <typeAlias alias="bbsRequestDTO" type="com.spring.react_spring_pjt.bbs.domain.BbsRequestDTO"/>
+        <typeAlias alias="CommentResponseDTO" type="com.spring.react_spring_pjt.bbs.domain.comment.CommentResponseDTO"/>
+        <typeAlias alias="CommentRequestDTO" type="com.spring.react_spring_pjt.bbs.domain.comment.CommentRequestDTO"/>
     
     </typeAliases>
 </configuration>

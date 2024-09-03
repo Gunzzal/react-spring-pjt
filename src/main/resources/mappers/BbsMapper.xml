@@ -4,20 +4,20 @@
 <mapper namespace="com.spring.react_spring_pjt.bbs.dao.BbsMapper">
 
     <select id="findAllRow"
-            resultType="com.spring.react_spring_pjt.bbs.domain.BbsResponseDTO">
+            resultType="BbsResponseDTO">
         SELECT ID, TITLE, CONTENT
         FROM TB_BBS
     </select>
 
     <insert id="saveRow"
-            parameterType="com.spring.react_spring_pjt.bbs.domain.BbsRequestDTO">
+            parameterType="BbsRequestDTO">
         INSERT INTO TB_BBS(TITLE, CONTENT)
         VALUES( #{title}, #{content} )
     </insert>
     
     <select id="findRow"
             parameterType="java.util.HashMap"
-            resultType="com.spring.react_spring_pjt.bbs.domain.BbsResponseDTO">
+            resultType="BbsResponseDTO">
         SELECT ID,TITLE,CONTENT
         FROM TB_BBS
         WHERE ID = #{id}
@@ -25,14 +25,14 @@
 
      <select id="commentFindRow"
             parameterType="java.util.HashMap"
-            resultType="com.spring.react_spring_pjt.bbs.domain.comment.CommentResponseDTO">
+            resultType="CommentResponseDTO">
         SELECT ID,COMMENT,BBSID
         FROM TB_COMMENT
         WHERE BBSID = #{id}
     </select>
 
     <insert id="commentSaveRow"
-            parameterType="com.spring.react_spring_pjt.bbs.domain.comment.CommentRequestDTO">
+            parameterType="CommentRequestDTO">
         INSERT INTO TB_COMMENT(COMMENT, BBSID)
         VALUES( #{comment}, #{bbsid} )
     </insert>
@@ -50,7 +50,7 @@
     </delete>   
 
     <update id="updateRow"
-            parameterType="com.spring.react_spring_pjt.bbs.domain.BbsRequestDTO">
+            parameterType="BbsRequestDTO">
         UPDATE TB_BBS
         SET title = #{title},
             content = #{content}

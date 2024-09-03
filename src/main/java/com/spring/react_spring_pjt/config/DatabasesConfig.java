@@ -38,6 +38,7 @@ public class DatabasesConfig {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource());
         factoryBean.setMapperLocations(context.getResources("classpath:/mappers/**/*Mapper.xml"));
+        factoryBean.setConfigLocation(  context.getResource("classpath:/mybatis-config.xml"));
         return factoryBean.getObject();
     }
 
